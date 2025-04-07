@@ -2,5 +2,8 @@
 
 # Release OSPO-Resources
 
+## Release 1.2.0
+- Update License-Files by adding additional notes and disclaimer
+
 ## Release 1.1.0
 - First official GitHub-Release
