@@ -38,6 +38,11 @@ ospo-resources/
 │                   └── eupl_v1_2/              # EUPL 1.2 specific files
 │                       ├── header.txt          # Header template
 │                       └── license.txt         # Full license text
+│               └── apache-license/             # Apache 2.0 specific files
+│                   ├── licenses.properties
+│                   └── apache_v2_0/            # Apache 2.0 specific files
+│                       ├── header.txt          # Header template
+│                       └── license.txt         # Full license text
 │           └── license/                        # Root directory for OSPO-Licenses
 │               └── apache20/                   # Apache 2.0 specific files
 │                   └── LICENSE.md              # Full license text
@@ -65,15 +70,30 @@ This library is designed to be used as a dependency in the License-Maven-Plugin 
 <plugin>
     <groupId>org.codehaus.mojo</groupId>
     <artifactId>license-maven-plugin</artifactId>
+   <configuration>
+      <!-- Add your plugin configuration here -->
+   </configuration>
     <dependencies>
         <dependency>
             <groupId>de.gematik</groupId>
             <artifactId>ospo-resources</artifactId>
-            <version>1.1.0</version>
+            <version>1.3.0</version>
         </dependency>
     </dependencies>
 </plugin>
 ```
+Here is an example configuration:
+```xml
+    <configuration>
+        <!-- file header -->
+        <licenseName>apache_v2_0</licenseName>
+        <licenseResolver>classpath://copyright-header/apache-license</licenseResolver>
+         ...
+    </configuration>
+```
+Important configuration fields:
+* licenseName: specifies the license to use. Use apache_v2_0 (for Apache License 2.0) or eupl_v1_2 (for EUPL 1.2), corresponding to the license types provided in this library.
+* licenseResolver: defines the path to the license header templates. Use classpath://copyright-header/apache-license for Apache 2.0 or classpath://copyright-header/eupl-license for EUPL 1.2.
 
 The actual plugin configuration should be done in your project's parent POM.
 
