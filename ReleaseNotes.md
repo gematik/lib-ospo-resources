@@ -2,6 +2,10 @@
 
 # Release OSPO-Resources
 
+## Release 1.3.1
+- Updated Apache License 2.0 header template to fix formatting issues
+- Updated Eupl 1.2 header template to fix formatting issues
+
 ## Release 1.3.0
 - Added configuration files for Apache License 2.0, including header template and license text
 
